@@ -4,23 +4,31 @@ const router = express.Router();
 
 const users = [
    {
-     FirstName: "Fidel",
-    LastName: "Jayden",
-    Email: "jaydendel@gmail.com",
+     firstName: "Fidel",
+    lastName: "Jayden",
+    email: "jaydendel@gmail.com",
     password: "1234"
    },
 
    {
-    FirstName: "Scott",
-    LastName: "Shaka",
-    Email: "jaydendel@gmail.com",
+    firstName: "Scott",
+    lastName: "Shaka",
+    email: "jaydendel@gmail.com",
     password: "1234"
    }
 ]
 
-router.get('/', (req, res) => {
-    console.log(users);
-    res.send('Hello');
+router.get('/', (req, res) => { 
+    res.send(users);
+});
+
+router.post('/', (req, res) => {
+const user = req.body;
+
+users.push(user);
+
+res.send(`User with the name ${user.firstName} added to the database!`);
 });
 
 export default router;
+

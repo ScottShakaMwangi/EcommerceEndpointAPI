@@ -21,12 +21,3 @@ app.listen(PORT, () => console.log(`Server running on port: http://localhost:${P
 
 
 
-// const dotenv = require("dotenv");
-// const userRoute = require("./routes/user")
-
-// dotenv.config();
-
-
-
-// app.use("/api/user", userRoute);
-

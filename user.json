@@ -1,7 +1,7 @@
 {
-    "FirstName": "Fidel",
-    "LastName": "Jayden",
-    "Email": "jaydendel@gmail.com",
+    "firstName": "Fidel",
+    "lastName": "Jayden",
+    "email": "jaydendel@gmail.com",
     "password": "1234"
 }
 
