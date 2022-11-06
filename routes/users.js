@@ -17,7 +17,6 @@ users.push({ ...user, id: uuidv4() });
 res.send(`User with the name ${user.firstName} added to the database!`);
 });
 
-//users/2 => req.params {id: 2}
 
 router.get('/:id', (req, res) => {
     const { id } = req.params;
@@ -30,10 +29,6 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
 
-    // id to delete 123
-
-    //Scott 123
-    //Fidel 345
 
     users = users.filter((user) => user.id !== id)
     res.send(`user with the id ${id} deleted from the database.`)
