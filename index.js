@@ -3,12 +3,16 @@ import bodyParser from 'body-parser';
 
 import usersRoutes from './routes/users.js';
 
+import productsRoutes from './routes/products.js';
+
 const app = express ();
 const PORT = 5000;
 
 app.use(bodyParser.json());
 
 app.use('/users', usersRoutes);
+
+app.use('/products', productsRoutes);
 
 app.get('/', (req, res) => res.send('Hello from homepage'));
 
