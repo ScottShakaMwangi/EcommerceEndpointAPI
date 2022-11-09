@@ -1,17 +1,36 @@
-const express = require("express");
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import usersRoutes from './routes/users.js';
+
+import productsRoutes from './routes/products.js';
+
+import ordersRoutes from './routes/orders.js';
+
+import cartsRoutes from './routes/carts.js';
+
 const app = express ();
-const mongoose = require("mongoose")
-const dotenv = require("dotenv");
+const PORT = 5000;
 
-dotenv.config();
+app.use(bodyParser.json());
 
-mongoose
-.connect(process.env.MONGO_URL)
-.then(()=>console.log("DBconnection Successfull!"))
-.catch((err)=>{
-    console.log(err)
-});
+app.use('/users', usersRoutes);
 
-app.listen(process.env.PORT || 5000, ()=>{
-    console.log("Backend server is running!")
-})
+app.use('/products', productsRoutes);
+
+app.use('/orders', ordersRoutes);
+
+app.use('/carts', cartsRoutes);
+
+
+app.get('/', (req, res) => res.send('Hello from homepage'));
+
+app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`))
+
+
+
+
+
+
+
+
